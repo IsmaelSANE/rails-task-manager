@@ -1,0 +1,19 @@
+<h1>Edit a Task</h1>
+<%= form_for(@task) do |t| %>
+  <ul>
+  <% @task.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= t.label :title %><br />
+    <%= t.text_field :title %>
+  </p>
+  <p>
+    <%= t.label :details %><br />
+    <%= t.text_area :details %>
+  </p>
+  <p>
+    <%= t.submit %>
+  </p>
+<% end %>
